@@ -1,0 +1,85 @@
+Sub hideRows()
+    ThisWorkbook.Sheets("Sheet1").Rows("2:4").Hidden = True
+    
+End Sub
+
+Sub showRows()
+    ThisWorkbook.Sheets("Sheet1").Rows("2:3").Hidden = False
+    
+End Sub
+
+Sub hideColumns()
+    ThisWorkbook.Sheets("Sheet1").Columns("B:C").Hidden = True
+    
+End Sub
+
+Sub showColumns()
+    ThisWorkbook.Sheets("Sheet1").Columns("B:B").Hidden = False
+    
+End Sub
+
+Sub fillSelection()
+    Selection.Value = "Filled"
+    Selection.Interior.Color = RGB(0, 20, 0)
+    Selection.Font.Color = RGB(255, 255, 255)
+End Sub
+
+Sub inputuser()
+    'Dim num1 As Integer
+    'Dim num2 As Integer, num3 As Integer
+    
+    'num1 = InputBox("Please input your first number")
+    'num2 = InputBox("Please inpout your second number")
+    
+    'num3 = num1 + num2
+    
+    'MsgBox ("The sum is " & num3)
+    'MsgBox ("The difference between your numbers is " & (num1 - num2))
+    
+    Dim myString As String
+    Dim myString2 As String
+    myString = "Look at me, I'm a string"
+    myString2 = "Look at me, I'm a second string"
+    
+    myString = myString & " " & myString2
+    myString = Left(myString, 5)
+    ThisWorkbook.Sheets("Sheet1").Cells(1, 1).Value = myString
+    
+End Sub
+
+Sub dateTutorial()
+Dim myDate As Date
+Dim myDate2 As Date
+Dim dateDifference As Long
+
+'myDate = Date
+'myDate2 = #7/4/1962#
+
+'dateDifference = myDate - myDate2
+'MsgBox "The latest episode of Mad Men I watched took place  " & dateDifference & " days ago!"
+
+'Show the current date and time
+'MsgBox Now
+
+'Show the date one month from now.
+'myDate2 = DateSerial(Year(myDate), Month(myDate) + 1, Day(myDate))
+
+'Find the first day of the current week
+myDate = Date - Weekday(Date, vbMonday)
+MsgBox myDate
+
+End Sub
+
+Sub foo()
+    Dim myBool As Boolean
+    
+    'Evaluates True
+    'myBool = (4 <> 5)
+    
+    'Evaluates False
+    myBool = (4 > 5)
+    MsgBox myBool
+End Sub
+
+
+
